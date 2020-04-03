@@ -32,3 +32,18 @@ features['Gender']=le.fit_transform(features['Gender'])
 features['Medium']=le.fit_transform(features['Medium'])
 features['CourseType']=le.fit_transform(features['CourseType'])
 features['ProgramType']=le.fit_transform(features['ProgramType'])
+print("Features after Label Encoding")
+print(features.head(5))
+
+
+print("Checking the null values present in the dataset")
+print(features.isnull().sum())
+print("Eliminating the null values")
+import numpy as np
+from sklearn.preprocessing import Imputer
+im=Imputer(strategy='mean',missing_values=np.nan)
+features['MTT_50']=im.fit_transform(features[['MTT_50']].values)
+features['ETT_100']=im.fit_transform(features[['ETT_100']].values)
+features['ETP_100']=im.fit_transform(features[['ETP_100']].values)
+features['Course_Att']=im.fit_transform(features[['Course_Att']].values)
+print(features.isnull().sum())
