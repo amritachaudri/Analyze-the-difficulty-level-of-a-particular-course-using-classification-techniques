@@ -51,3 +51,13 @@ print(features.isnull().sum())
 #visualizing the data
 import matplotlib.pyplot as plt
 features.plot.bar(x = 'Regd No', y = 'Grade')
+features.plot.bar(x = 'Regd No', y = ['MTT_50','ETT_100','ETP_100','CA_100'])
+features.plot.bar(x = 'Regd No', y = 'Course_Att')
+
+#Plotting heatmap
+#To find the relationship between marks,attendence and grades
+df1=features[['MTT_50','ETT_100','ETP_100','CA_100','Grade']]
+print(df1.head(4))
+import seaborn as sns
+hm=pd.pivot_table(df1,values='Grade',index=['ETT_100'],columns='CA_100')
+sns.heatmap(hm)
