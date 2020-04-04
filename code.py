@@ -47,3 +47,7 @@ features['ETT_100']=im.fit_transform(features[['ETT_100']].values)
 features['ETP_100']=im.fit_transform(features[['ETP_100']].values)
 features['Course_Att']=im.fit_transform(features[['Course_Att']].values)
 print(features.isnull().sum())
+
+#visualizing the data
+import matplotlib.pyplot as plt
+features.plot.bar(x = 'Regd No', y = 'Grade')
