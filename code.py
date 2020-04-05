@@ -115,3 +115,20 @@ knn.fit(X_train,y_train)
 x_k=knn.predict(X_test)
 print("The accuracy of KNeighborsClassifier classifiers:")
 print(r2_score(x_k,y_test)*100)
+
+print("The Best Classifier for this dataset is SVM")
+#Checking the Difficulty of the course
+# Minimum grade of the data
+minimum_grade = np.min(grade)
+#Maximum grdae of the data
+maximum_grade = np.max(grade)
+# Mean grade of the data
+mean_grade= np.mean(grade)
+print("Minimum grade: {}".format(minimum_grade)) 
+print("Maximum grade: {}".format(maximum_grade))
+print("Mean grade: {}".format(mean_grade))
+prect=(mean_grade/10)*100
+print("The mean percentage of grades of students in this course is:")
+print(prect)
+
+print("As the mean precentage is above 50% SO THE DIFFICULTY LEVEL OF THE COURSE IS MEDIUM ")
