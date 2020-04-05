@@ -72,3 +72,25 @@ data1=sc.fit_transform(features)
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(y,grade,test_size=0.3,random_state=0)
 print("Training and testing split was successful.")
+
+#Appling Pipeline 
+#for fitting and transforming the classifiers
+from sklearn.pipeline import Pipeline
+#Checking different classification method to select the best classifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+#importing accuracy score of the classifier
+from sklearn.metrics import r2_score
+#Using the pipeline
+pipe=Pipeline([('sls',StandardScaler()),('logistic Reg',LogisticRegression(random_state=2)) ])
+pipe.fit(X_train,y_train)
+x_p=pipe.predict(X_test)
+print(r2_score(x_p,y_test))
+svm=SVC(kernel='linear')
+svm.fit(X_train,y_train)
+x_s=svm.predict(X_test)
+print(r2_score(x_s,y_test)*100)
