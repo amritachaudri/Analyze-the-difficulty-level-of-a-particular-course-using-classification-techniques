@@ -94,3 +94,8 @@ svm=SVC(kernel='linear')
 svm.fit(X_train,y_train)
 x_s=svm.predict(X_test)
 print(r2_score(x_s,y_test)*100)
+
+#Checking the confusion matrix for SVM
+from sklearn.metrics import confusion_matrix
+cm=confusion_matrix(y_test,x_s)
+print(cm)
