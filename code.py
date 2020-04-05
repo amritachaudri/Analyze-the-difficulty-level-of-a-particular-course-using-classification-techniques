@@ -67,3 +67,8 @@ sns.heatmap(hm)
 from sklearn.preprocessing import StandardScaler
 sc=StandardScaler()
 data1=sc.fit_transform(features)
+
+#Splitting the dataset into testing and training set
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(y,grade,test_size=0.3,random_state=0)
+print("Training and testing split was successful.")
