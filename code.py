@@ -62,6 +62,9 @@ import seaborn as sns
 hm=pd.pivot_table(df1,values='Grade',index=['ETT_100'],columns='CA_100')
 sns.heatmap(hm)
 
+grade=features['Grade']
+y=features.drop('Grade', axis = 1)
+
 #Applying StandardScaler
 #to arrange the data in a normal distribution
 from sklearn.preprocessing import StandardScaler
