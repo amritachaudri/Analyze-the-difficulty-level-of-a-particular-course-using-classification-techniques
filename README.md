@@ -10,6 +10,8 @@ In this step we are trying to perform feature scaling on the given data set. Fir
 
 ### Step 3:Visualization
 In this step we plot graph between different features of the data set such as grade, course attendance, different evaluations, and with the help of heat map check the relationship different features of the data set.
+<img src = 'img/mtt.png' width = 400 height = 400>
+<img src = 'img/couse.png' width = 400 height = 400>
  
 ### Step 4:Splitting the data set
 With the help of train test split, we split the data set into parts that is training and testing.
@@ -21,7 +23,6 @@ We choose some models for the comparative study. The models chosen are SVM, line
 With the use of pipeline we perform hyper parameter tuning on linear regression classification model. 
 ### Step 7: Confusion matrix: 
 With Help of confusion matrix on SVM we try to visualise the classified data.
-
 ### Step 8:Checking the accuracy: 
 Check the accuracy of the above models by R2 score as the models are classification models
 
